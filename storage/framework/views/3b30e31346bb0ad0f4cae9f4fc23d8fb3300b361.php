@@ -14,7 +14,7 @@
                   </div>
                   <div class="x_content">
                     <br />
-    <?php echo Form::model($data,['method' => 'PATCH','route'=>['Pegawai.update',$data->id],'class' => 'form-horizontal form-label-left','files'=>'true']); ?>
+    <?php echo Form::model($pegawai,['method' => 'PATCH','route'=>['Pegawai.update',$pegawai->id],'class' => 'form-horizontal form-label-left','files'=>'true']); ?>
 
     <div id="pegawai">
     <div class="form-group">
@@ -64,6 +64,10 @@
                <span class="required">*</span>
           </div>
           <div class="col-md-6 col-sm-6 col-xs-12">
+
+          <th>
+            <img src="<?php echo e(asset('/image/'.$pegawai->Photo)); ?>" height="120px" width="100px">
+          </th>
               <?php echo Form::file('Photo',null,['class'=>'form-control col-md-7 col-xs-12']); ?>
 
               <h4 class="text-danger"><?php echo '<br><br>'.$errors->first('Nip', '<p>Form input harus diisi!!</p>') ?></h4>

@@ -84,9 +84,7 @@
                                     @endif
                                   <td>{{$data->Petugas_penerima}} </td>
                          
-                                 <th><a href="{{url('Penggajians',$data->id)}}" class="btn btn-primary"><i class="fa fa-eye">Lihat</i></a></th>
-
-                                 <th><a title="Edit" href="{{route('Penggajians.edit',$data->id)}}" class="btn btn-warning"><i class="fa fa-edit">Ubah</i></a></th>
+                                
 
                                  <th>
 

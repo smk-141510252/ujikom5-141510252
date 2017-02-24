@@ -118,10 +118,14 @@ class PegawaiController extends Controller
     public function edit( $id)
     {
         
-        $data = Pegawai::find($id);
-        $golongan = Golongan::all();
-        $jabatan = Jabatan::all();
-        return view('FPegawai.edit',compact('data','golongan','jabatan'));
+        $pegawai = Pegawai::find($id);
+        $fi = Jabatan::whereIn('id',[$pegawai->jabatan_id])->first();
+        $jabatan= Jabatan::whereIn('id',[$pegawai->jabatan_id])->get();
+
+        $si = Golongan::whereIn('id',[$pegawai->golongan_id])->first();
+       $golongan= Golongan::whereIn('id',[$pegawai->golongan_id])->get();
+        
+        return view('FPegawai.edit',compact('pegawai','golongan','jabatan','fi','si'));
     }
 
     /**

@@ -176,6 +176,6 @@ class PenggajianController extends Controller
     public function destroy($id)
     {
         Penggajian::find($id)->delete();
-        return redirect('Penggajian');
+        return redirect('Penggajians');
     }
 }
